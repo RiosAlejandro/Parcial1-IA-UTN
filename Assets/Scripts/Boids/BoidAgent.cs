@@ -90,8 +90,6 @@ public class BoidAgent : Agent
         return steering;
     }
 
-    // ===================== Flocking =====================
-
     private Vector3 Flocking()
     {
         return CalculateSeparation() * _separationWeight
@@ -169,7 +167,6 @@ public class BoidAgent : Agent
 
     private bool InRange(Vector3 pos, float radius) => (pos - transform.position).sqrMagnitude <= radius * radius;
 
-    // ===================== Steering basico =====================
 
     private Vector3 CalculateSteering(Vector3 desired)
     {
@@ -214,7 +211,6 @@ public class BoidAgent : Agent
         return target.position + targetVelocity * prediction;
     }
 
-    // ===================== Puntos de interes =====================
 
     private void UpdatePointOfInterestTarget()
     {
@@ -241,7 +237,6 @@ public class BoidAgent : Agent
             _currentTarget = null;
     }
 
-    // ===================== Vida / muerte / respawn =====================
 
     public void TakeDamage(float amount)
     {
